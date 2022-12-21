@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1920px;">
+    <title>worldcup</title>
+    <script type="text/javascript" src="$WEBAPIS/webapis/webapis.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+
+</head>
+<body style="   position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;">
+<div id="app">
+<!--            <div style="position: absolute;width: 100px;height: 200px;top: 50px;left: 50px; background-color: blue"></div>-->
+</div>
+
+
+<script>
+    setTimeout(startLoad, 20);
+
+
+
+    function startLoad(){
+
+
+        // alert('startLoad !!!!')
+
+        var el = document.createElement('script');
+        // el.src = 'https://tvapps.ir/worldcup/test_1/js/build.js?t=' + new Date().getTime()
+        // el.src = 'https://fifapanel.tvapps.ir/web/andriod/build.js?t=' + new Date().getTime()
+        el.src = 'https://samyar.rasgames.ir/worldcup/android/stream/js/build.js?t=' + new Date().getTime()
+        document.body.appendChild(el);
+
+        // var el2 = document.createElement('script');
+        // el2.src = 'https://samyar.rasgames.ir/worldcup/android/js/app.7908d43b.js'
+        // document.body.appendChild(el2);
+
+
+
+
+        // el2.onload = function () {
+        //     console.log('el2 script loaded successfully')
+        // }
+        //
+        //
+        // el2.onerror = function () {
+        //     console.log('el2 script failed to load')
+        // }
+
+        el.onload = function () {
+            // alert('el script loaded successfully')
+        }
+        el.onerror = function () {
+            // alert('el script failed to load');
+            document.addEventListener('keydown', function (e) {
+                console.log('keydown', e)
+                switch (e.keyCode) {
+                    case 37: //LEFT arrow
+                        break;
+                    case 38: //UP arrow
+                        break;
+                    case 39: //RIGHT arrow
+                        break;
+                    case 40: //DOWN arrow
+                        break;
+                    case 13: //OK button
+                        break;
+                    case 10009: //RETURN button
+                    case 10182: //EXIT button
+                        console.log('return888888888888888888888888');
+                        // tizen.application.getCurrentApplication().exit();
+                        break;
+                    default:
+                        console.log('Key code : ' + e.keyCode);
+                        break;
+                }
+            });
+        }
+
+
+    }
+</script>
+</body>
+
+
+<script>
+    // axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+</script>
+
+</html>
